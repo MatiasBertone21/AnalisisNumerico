@@ -1,0 +1,10 @@
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Logica.dll
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Logica.pdb
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Entidades.dll
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\MathParser.org-mXparser.dll
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Entidades.pdb
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.csproj.CoreCompileInputs.cache
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.dll
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.pdb
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.csprojAssemblyReference.cache
+C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.csproj.CopyComplete
