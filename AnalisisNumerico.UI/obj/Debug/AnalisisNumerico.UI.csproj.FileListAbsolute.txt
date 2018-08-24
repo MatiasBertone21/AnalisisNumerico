@@ -16,3 +16,22 @@ C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNu
 C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.pdb
 C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csprojAssemblyReference.cache
 C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.CopyComplete
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.UI.exe.config
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.UI.exe
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.UI.pdb
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Entidades.dll
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Logica.dll
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\SimpleInjector.dll
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\MathParser.org-mXparser.dll
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Entidades.pdb
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Logica.pdb
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\bin\Debug\SimpleInjector.xml
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.InicioForm.resources
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Properties.Resources.resources
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.CopyComplete
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.exe
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.pdb
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.MenuForm.resources

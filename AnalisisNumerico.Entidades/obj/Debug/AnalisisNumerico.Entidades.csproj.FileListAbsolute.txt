@@ -4,3 +4,9 @@ C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\Ana
 C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.dll
 C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.pdb
 C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.dll
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.pdb
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.dll
+C:\Users\Usuario\Documents\Analisis Numerico\Trabajo\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.pdb

@@ -10,8 +10,9 @@ namespace AnalisisNumerico.UI
         {
             Errorlabel.Visible = false;
         }
-        private readonly IMetodosRaices metodosRaices;
 
+        private readonly IMetodosRaices metodosRaices;
+  
         public InicioForm(IMetodosRaices metodosRaices)
         {
             this.metodosRaices = metodosRaices;
@@ -36,6 +37,7 @@ namespace AnalisisNumerico.UI
                 Tolerancia = tole,
                 Iteraciones = Ite
             });
+
             if (resultado.Iteraciones == 0)
             {
                 Errorlabel.Visible = true;
@@ -46,21 +48,6 @@ namespace AnalisisNumerico.UI
                 ItetextBox.Text = resultado.Iteraciones.ToString();
                 ErrortextBox.Text = resultado.Error.ToString();
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ValorInicialTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InicioForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

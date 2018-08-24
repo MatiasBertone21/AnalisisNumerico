@@ -19,17 +19,14 @@ namespace AnalisisNumerico.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap();
-            Application.Run(container.GetInstance<InicioForm>());
+            Application.Run(container.GetInstance<MenuForm>());
         }
 
         private static void Bootstrap()
         {
-            // Create the container as usual.
             container = new Container();
-
-            // Register your types, for instance:
             container.Register<IMetodosRaices, MetodosRaices>();
-            container.Register<InicioForm>();
+            container.Register<MenuForm>();
         }
     }
 }
