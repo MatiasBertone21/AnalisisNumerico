@@ -19,7 +19,7 @@ namespace AnalisisNumerico.Logica
             return resultado;
         }
 
-        public double CalcularXd (ParametrosBiseccion parametros)
+        public double CalcularXd(ParametrosBiseccion parametros)
         {
             var funcion = new Function(parametros.Funcion);
             var argumento1 = new Argument("x", parametros.Xd);
@@ -32,11 +32,12 @@ namespace AnalisisNumerico.Logica
             return resultado;
         }
 
-        public Resultado MetodoBiseccion( ParametrosBiseccion parametros)
+        public Resultado MetodoBiseccion(ParametrosBiseccion parametros)
         {
+            var Resultado = new Resultado();
+
             double Fxi = CalcularXi(parametros);
             double Fxd = CalcularXd(parametros);
-            var Resultado = new Resultado();
             double R = Fxi * Fxd;
             Resultado.Iteraciones = 0;
             double xant = 0;

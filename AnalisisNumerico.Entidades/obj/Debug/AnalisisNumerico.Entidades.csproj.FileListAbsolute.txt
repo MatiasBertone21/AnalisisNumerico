@@ -1,6 +1,0 @@
-C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.dll
-C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.pdb
-C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csproj.CoreCompileInputs.cache
-C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.dll
-C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.pdb
-C:\Users\matib\Desktop\AnalisisNumerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csprojAssemblyReference.cache
