@@ -36,9 +36,12 @@ namespace AnalisisNumerico.UI
                 Tolerancia = tole,
                 Iteraciones = Ite
             });
-            if (resultado.Iteraciones == 0)
+            if (resultado.Raiz == 00)
             {
                 Errorlabel.Visible = true;
+                RaiztextBox.Text = "X";
+                ItetextBox.Text = "X";
+                ErrortextBox.Text = "X";
             }
             else
             {
