@@ -206,7 +206,6 @@ namespace AnalisisNumerico.Logica
             }
             return Resultado;
         }
-
         public Resultado MetodoSecante (ParametrosBiseccion parametros)
         {
             var Fxi = CalcularXi(parametros);

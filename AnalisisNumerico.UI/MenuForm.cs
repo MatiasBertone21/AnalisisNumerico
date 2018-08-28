@@ -25,16 +25,36 @@ namespace AnalisisNumerico.UI
 
         private void biseccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InicioForm biseccionForm = new InicioForm(metodosRaices)
+            using (InicioForm biseccionForm = new InicioForm(metodosRaices)
             {
-                Owner = this 
-            };
-            biseccionForm.ShowDialog();
+                Owner = this
+            })
+            {
+                biseccionForm.ShowDialog();
+            }
         }
+
+        private void reglaFalsaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (ReglaFalsaForm reglaFalsaForm = new ReglaFalsaForm(metodosRaices)
+            {
+                Owner = this
+            })
+            {
+                reglaFalsaForm.ShowDialog();
+            }
+        }
+
+        //Implementaciones
 
         Resultado IMetodosRaices.MetodoBiseccion(ParametrosBiseccion parametros)
         {
             return metodosRaices.MetodoBiseccion(parametros);
+        }
+
+        public Resultado MetodoReglaFalsa(ParametrosBiseccion parametros)
+        {
+            return metodosRaices.MetodoReglaFalsa(parametros);
         }
     }
 }

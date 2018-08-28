@@ -31,9 +31,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.raicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodosCerradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metodosAbiertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.biseccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reglaFalsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metodosAbiertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,24 +67,25 @@
             this.metodosCerradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.metodosCerradosToolStripMenuItem.Text = "Metodos Cerrados";
             // 
-            // metodosAbiertosToolStripMenuItem
-            // 
-            this.metodosAbiertosToolStripMenuItem.Name = "metodosAbiertosToolStripMenuItem";
-            this.metodosAbiertosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.metodosAbiertosToolStripMenuItem.Text = "Metodos Abiertos";
-            // 
             // biseccionToolStripMenuItem
             // 
             this.biseccionToolStripMenuItem.Name = "biseccionToolStripMenuItem";
-            this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.biseccionToolStripMenuItem.Text = "Biseccion";
             this.biseccionToolStripMenuItem.Click += new System.EventHandler(this.biseccionToolStripMenuItem_Click);
             // 
             // reglaFalsaToolStripMenuItem
             // 
             this.reglaFalsaToolStripMenuItem.Name = "reglaFalsaToolStripMenuItem";
-            this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.reglaFalsaToolStripMenuItem.Text = "Regla Falsa";
+            this.reglaFalsaToolStripMenuItem.Click += new System.EventHandler(this.reglaFalsaToolStripMenuItem_Click);
+            // 
+            // metodosAbiertosToolStripMenuItem
+            // 
+            this.metodosAbiertosToolStripMenuItem.Name = "metodosAbiertosToolStripMenuItem";
+            this.metodosAbiertosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metodosAbiertosToolStripMenuItem.Text = "Metodos Abiertos";
             // 
             // MenuForm
             // 
