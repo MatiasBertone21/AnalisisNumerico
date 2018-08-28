@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.UI
 {
-    partial class InicioForm
+    partial class BiseccionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -201,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 247);
+            this.ClientSize = new System.Drawing.Size(457, 202);
             this.Controls.Add(this.ErrortextBox);
             this.Controls.Add(this.ItetextBox);
             this.Controls.Add(this.label8);
@@ -221,7 +221,7 @@
             this.Controls.Add(this.CalcularButton);
             this.Controls.Add(this.FuncionTextBox);
             this.Name = "InicioForm";
-            this.Text = "Métodos Raíces";
+            this.Text = "Biseccion";
             this.ResumeLayout(false);
             this.PerformLayout();
 

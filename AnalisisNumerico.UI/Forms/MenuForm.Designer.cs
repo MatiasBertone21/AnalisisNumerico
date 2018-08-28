@@ -34,6 +34,8 @@
             this.biseccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reglaFalsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metodosAbiertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newtonRaphsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.secanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,20 +74,37 @@
             this.biseccionToolStripMenuItem.Name = "biseccionToolStripMenuItem";
             this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.biseccionToolStripMenuItem.Text = "Biseccion";
-            this.biseccionToolStripMenuItem.Click += new System.EventHandler(this.biseccionToolStripMenuItem_Click);
+            this.biseccionToolStripMenuItem.Click += new System.EventHandler(this.BiseccionToolStripMenuItem_Click);
             // 
             // reglaFalsaToolStripMenuItem
             // 
             this.reglaFalsaToolStripMenuItem.Name = "reglaFalsaToolStripMenuItem";
             this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.reglaFalsaToolStripMenuItem.Text = "Regla Falsa";
-            this.reglaFalsaToolStripMenuItem.Click += new System.EventHandler(this.reglaFalsaToolStripMenuItem_Click);
+            this.reglaFalsaToolStripMenuItem.Click += new System.EventHandler(this.ReglaFalsaToolStripMenuItem_Click);
             // 
             // metodosAbiertosToolStripMenuItem
             // 
+            this.metodosAbiertosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newtonRaphsonToolStripMenuItem,
+            this.secanteToolStripMenuItem});
             this.metodosAbiertosToolStripMenuItem.Name = "metodosAbiertosToolStripMenuItem";
             this.metodosAbiertosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.metodosAbiertosToolStripMenuItem.Text = "Metodos Abiertos";
+            // 
+            // newtonRaphsonToolStripMenuItem
+            // 
+            this.newtonRaphsonToolStripMenuItem.Name = "newtonRaphsonToolStripMenuItem";
+            this.newtonRaphsonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.newtonRaphsonToolStripMenuItem.Text = "Newton-Raphson (Tangente)";
+            this.newtonRaphsonToolStripMenuItem.Click += new System.EventHandler(this.NewtonRaphsonToolStripMenuItem_Click);
+            // 
+            // secanteToolStripMenuItem
+            // 
+            this.secanteToolStripMenuItem.Name = "secanteToolStripMenuItem";
+            this.secanteToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.secanteToolStripMenuItem.Text = "Secante";
+            this.secanteToolStripMenuItem.Click += new System.EventHandler(this.secanteToolStripMenuItem_Click);
             // 
             // MenuForm
             // 
@@ -95,7 +114,6 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuForm";
-            this.Text = "MenuForm";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -111,5 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem biseccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reglaFalsaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metodosAbiertosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newtonRaphsonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem secanteToolStripMenuItem;
     }
 }

@@ -2,9 +2,13 @@
 {
     public interface IMetodosRaices
     {
-        Resultado MetodoBiseccion(ParametrosBiseccion parametros);
+        Resultado MetodoBiseccion(Parametros parametros);
 
-        Resultado MetodoReglaFalsa(ParametrosBiseccion parametros);
+        Resultado MetodoReglaFalsa(Parametros parametros);
+
+        Resultado MetodoTangente(Parametros parametros);
+
+        Resultado MetodoSecante(Parametros parametros);
     }
 
 

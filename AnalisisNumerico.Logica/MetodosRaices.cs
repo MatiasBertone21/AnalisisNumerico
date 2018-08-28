@@ -6,7 +6,7 @@ namespace AnalisisNumerico.Logica
 {
     public class MetodosRaices : IMetodosRaices
     {
-        public double CalcularXi(ParametrosBiseccion parametros)
+        public double CalcularXi(Parametros parametros)
         {
             var funcion = new Function(parametros.Funcion);
             var argumento1 = new Argument("x", parametros.Xi);
@@ -19,7 +19,7 @@ namespace AnalisisNumerico.Logica
             return resultado;
         }
 
-        public double CalcularXd(ParametrosBiseccion parametros)
+        public double CalcularXd(Parametros parametros)
         {
             var funcion = new Function(parametros.Funcion);
             var argumento1 = new Argument("x", parametros.Xd);
@@ -32,7 +32,7 @@ namespace AnalisisNumerico.Logica
             return resultado;
         }
 
-        public Resultado MetodoBiseccion(ParametrosBiseccion parametros)
+        public Resultado MetodoBiseccion(Parametros parametros)
         {
             var Resultado = new Resultado();
 
@@ -54,7 +54,7 @@ namespace AnalisisNumerico.Logica
                     Fxi = CalcularXi(parametros);
                     Fxd = CalcularXd(parametros);
                     var xr = (parametros.Xi + parametros.Xd) / 2;
-                    var Fxr = CalcularXi(new ParametrosBiseccion
+                    var Fxr = CalcularXi(new Parametros
                     {
                         Funcion = parametros.Funcion,
                         Xi = xr,
@@ -95,7 +95,8 @@ namespace AnalisisNumerico.Logica
             return Resultado;
                 
         }
-        public Resultado MetodoReglaFalsa(ParametrosBiseccion parametros)
+
+        public Resultado MetodoReglaFalsa(Parametros parametros)
         {
             double Fxi = CalcularXi(parametros);
             double Fxd = CalcularXd(parametros);
@@ -116,7 +117,7 @@ namespace AnalisisNumerico.Logica
                     Fxi = CalcularXi(parametros);
                     Fxd = CalcularXd(parametros);
                     var xr = ((Fxd * parametros.Xi - Fxi * parametros.Xd) / (Fxi-Fxd)); // <----
-                    var Fxr = CalcularXi(new ParametrosBiseccion
+                    var Fxr = CalcularXi(new Parametros
                     {
                         Funcion = parametros.Funcion,
                         Xi = xr,
@@ -157,11 +158,14 @@ namespace AnalisisNumerico.Logica
             return Resultado;
 
         }
-        public Resultado MetodoDeduccionFormulaFundamental (ParametrosBiseccion parametros)
+
+        public Resultado MetodoTangente (Parametros parametros)
         {
             double Fxi = CalcularXi(parametros);
-            var Resultado = new Resultado();
-            Resultado.Iteraciones = 0;
+            var Resultado = new Resultado
+            {
+                Iteraciones = 0
+            };
             double xant = 0;
             double derFx = 0;
             bool bandera = false;
@@ -176,7 +180,7 @@ namespace AnalisisNumerico.Logica
                 else
                 {
                     Fxi = CalcularXi(parametros);
-                    var Fxitole = CalcularXi(new ParametrosBiseccion
+                    var Fxitole = CalcularXi(new Parametros
                     {
                         Funcion = parametros.Funcion,
                         Xi = parametros.Xi + parametros.Tolerancia,
@@ -186,7 +190,7 @@ namespace AnalisisNumerico.Logica
                     double xr = parametros.Xi - (Fxi / derFx);
                     Resultado.Iteraciones++;
                     Resultado.Error = (xr - xant) / xr;
-                    var Fxr = CalcularXi(new ParametrosBiseccion
+                    var Fxr = CalcularXi(new Parametros
                     {
                         Funcion = parametros.Funcion,
                         Xi = xr,
@@ -206,7 +210,8 @@ namespace AnalisisNumerico.Logica
             }
             return Resultado;
         }
-        public Resultado MetodoSecante (ParametrosBiseccion parametros)
+
+        public Resultado MetodoSecante (Parametros parametros)
         {
             var Fxi = CalcularXi(parametros);
             var Fxd = CalcularXd(parametros);
@@ -216,12 +221,12 @@ namespace AnalisisNumerico.Logica
             
             double CalcularSec (double x0, double x1)
             {
-                var Fx0 = CalcularXi(new ParametrosBiseccion
+                var Fx0 = CalcularXi(new Parametros
                 {
                     Funcion = parametros.Funcion,
                     Xi = x0,
                 });
-                var Fx1 = CalcularXi(new ParametrosBiseccion
+                var Fx1 = CalcularXi(new Parametros
                 {
                     Funcion = parametros.Funcion,
                     Xi = x1,

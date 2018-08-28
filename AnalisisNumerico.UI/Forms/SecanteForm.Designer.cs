@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.UI
 {
-    partial class FormulaFundamentalForm
+    partial class SecanteForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // FormulaFundamentalForm
+            // SecanteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 366);
-            this.Name = "FormulaFundamentalForm";
-            this.Text = "FormulaFundamentalForm";
+            this.ClientSize = new System.Drawing.Size(635, 363);
+            this.Name = "SecanteForm";
+            this.Text = "Secante";
             this.ResumeLayout(false);
 
         }

@@ -4,16 +4,16 @@ using System.Windows.Forms;
 
 namespace AnalisisNumerico.UI
 {
-    public partial class ReglaFalsaForm : Form
+    public partial class TangenteForm : Form
     {
-        public ReglaFalsaForm(IMetodosRaices metodosRaices)
+        private readonly IMetodosRaices metodosRaices;
+
+        public TangenteForm(IMetodosRaices metodosRaices)
         {
             this.metodosRaices = metodosRaices;
 
             InitializeComponent();
         }
-
-        private readonly IMetodosRaices metodosRaices;
 
         private void Errorlabel_Click(object sender, EventArgs e)
         {
@@ -24,19 +24,16 @@ namespace AnalisisNumerico.UI
         {
             Errorlabel.Visible = false;
             var funcion = FuncionTextBox.Text;
-            var Xi = double.Parse(XiTextBox.Text);
-            var Xd = double.Parse(XdTextBox.Text);
             var tole = double.Parse(ToleranciatextBox.Text);
             var Ite = int.Parse(IteracionestextBox.Text);
 
-            var resultado = metodosRaices.MetodoReglaFalsa(new ParametrosBiseccion
+            var resultado = metodosRaices.MetodoTangente(new Parametros
             {
                 Funcion = funcion,
-                Xi = Xi,
-                Xd = Xd,
                 Tolerancia = tole,
                 Iteraciones = Ite
             });
+
             if (resultado.Raiz == 00)
             {
                 Errorlabel.Visible = true;

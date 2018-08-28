@@ -221,7 +221,7 @@
             this.Controls.Add(this.CalcularButton);
             this.Controls.Add(this.FuncionTextBox);
             this.Name = "ReglaFalsaForm";
-            this.Text = "ReglaFalsaForm";
+            this.Text = "Regla Falsa";
             this.ResumeLayout(false);
             this.PerformLayout();
 

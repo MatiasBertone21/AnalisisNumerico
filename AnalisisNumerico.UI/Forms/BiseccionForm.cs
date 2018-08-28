@@ -4,20 +4,20 @@ using System.Windows.Forms;
 
 namespace AnalisisNumerico.UI
 {
-    public partial class InicioForm : Form
+    public partial class BiseccionForm : Form
     {
-        private void Errorlabel_Click(object sender, EventArgs e)
-        {
-            Errorlabel.Visible = false;
-        }
-
         private readonly IMetodosRaices metodosRaices;
-  
-        public InicioForm(IMetodosRaices metodosRaices)
+
+        public BiseccionForm(IMetodosRaices metodosRaices)
         {
             this.metodosRaices = metodosRaices;
 
             InitializeComponent();
+        }
+
+        private void Errorlabel_Click(object sender, EventArgs e)
+        {
+            Errorlabel.Visible = false;
         }
 
         private void CalcularButton_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace AnalisisNumerico.UI
             var tole = double.Parse(ToleranciatextBox.Text);
             var Ite = int.Parse(IteracionestextBox.Text);
 
-            var resultado = metodosRaices.MetodoBiseccion(new ParametrosBiseccion
+            var resultado = metodosRaices.MetodoBiseccion(new Parametros
             {
                 Funcion = funcion,
                 Xi = Xi,

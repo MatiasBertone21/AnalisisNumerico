@@ -48,40 +48,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormulaFundamentalForm.cs">
+    <Compile Include="Forms\TangenteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulaFundamentalForm.Designer.cs">
-      <DependentUpon>FormulaFundamentalForm.cs</DependentUpon>
+    <Compile Include="Forms\TangenteForm.Designer.cs">
+      <DependentUpon>TangenteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioForm.cs">
+    <Compile Include="Forms\BiseccionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioForm.Designer.cs">
-      <DependentUpon>InicioForm.cs</DependentUpon>
+    <Compile Include="Forms\BiseccionForm.Designer.cs">
+      <DependentUpon>BiseccionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="Forms\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
+    <Compile Include="Forms\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReglaFalsaForm.cs">
+    <Compile Include="Forms\ReglaFalsaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReglaFalsaForm.Designer.cs">
+    <Compile Include="Forms\ReglaFalsaForm.Designer.cs">
       <DependentUpon>ReglaFalsaForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormulaFundamentalForm.resx">
-      <DependentUpon>FormulaFundamentalForm.cs</DependentUpon>
+    <Compile Include="Forms\SecanteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SecanteForm.Designer.cs">
+      <DependentUpon>SecanteForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\TangenteForm.resx">
+      <DependentUpon>TangenteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InicioForm.resx">
-      <DependentUpon>InicioForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BiseccionForm.resx">
+      <DependentUpon>BiseccionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SecanteForm.resx">
+      <DependentUpon>SecanteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,7 +101,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReglaFalsaForm.resx">
+    <EmbeddedResource Include="Forms\ReglaFalsaForm.resx">
       <DependentUpon>ReglaFalsaForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

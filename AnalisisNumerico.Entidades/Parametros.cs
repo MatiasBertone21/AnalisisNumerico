@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.Entidades
 {
-    public class ParametrosBiseccion
+    public class Parametros
     {
         public string Funcion { get; set; }
 
