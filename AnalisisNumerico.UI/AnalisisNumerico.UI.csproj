@@ -48,48 +48,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\TangenteForm.cs">
+    <Compile Include="Forms Metodos Raices\TangenteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TangenteForm.Designer.cs">
+    <Compile Include="Forms Metodos Raices\TangenteForm.Designer.cs">
       <DependentUpon>TangenteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BiseccionForm.cs">
+    <Compile Include="Forms Metodos Raices\BiseccionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BiseccionForm.Designer.cs">
+    <Compile Include="Forms Metodos Raices\BiseccionForm.Designer.cs">
       <DependentUpon>BiseccionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuForm.cs">
+    <Compile Include="Forms Metodos Raices\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MenuForm.Designer.cs">
+    <Compile Include="Forms Metodos Raices\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\ReglaFalsaForm.cs">
+    <Compile Include="Forms Metodos Raices\ReglaFalsaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReglaFalsaForm.Designer.cs">
+    <Compile Include="Forms Metodos Raices\ReglaFalsaForm.Designer.cs">
       <DependentUpon>ReglaFalsaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SecanteForm.cs">
+    <Compile Include="Forms Metodos Raices\SecanteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SecanteForm.Designer.cs">
+    <Compile Include="Forms Metodos Raices\SecanteForm.Designer.cs">
       <DependentUpon>SecanteForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\TangenteForm.resx">
+    <EmbeddedResource Include="Forms Metodos Raices\TangenteForm.resx">
       <DependentUpon>TangenteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BiseccionForm.resx">
+    <EmbeddedResource Include="Forms Metodos Raices\BiseccionForm.resx">
       <DependentUpon>BiseccionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuForm.resx">
+    <EmbeddedResource Include="Forms Metodos Raices\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SecanteForm.resx">
+    <EmbeddedResource Include="Forms Metodos Raices\SecanteForm.resx">
       <DependentUpon>SecanteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -101,7 +101,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\ReglaFalsaForm.resx">
+    <EmbeddedResource Include="Forms Metodos Raices\ReglaFalsaForm.resx">
       <DependentUpon>ReglaFalsaForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

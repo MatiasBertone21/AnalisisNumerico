@@ -6,38 +6,24 @@ namespace AnalisisNumerico.Logica
 {
     public class MetodosRaices : IMetodosRaices
     {
-        public double CalcularXi(Parametros parametros)
+        public double Calculo(string Funcion, Double valor)
         {
-            var funcion = new Function(parametros.Funcion);
-            var argumento1 = new Argument("x", parametros.Xi);
-
-            var nombre = parametros.Funcion.Split('=')[0].Trim();
-
-            var expresion = new Expression(nombre, funcion, argumento1);
-            var resultado = expresion.calculate();
-
-            return resultado;
+            return new Function(Funcion).calculate(valor);
         }
-
-        public double CalcularXd(Parametros parametros)
-        {
-            var funcion = new Function(parametros.Funcion);
-            var argumento1 = new Argument("x", parametros.Xd);
-
-            var nombre = parametros.Funcion.Split('=')[0].Trim();
-
-            var expresion = new Expression(nombre, funcion, argumento1);
-            var resultado = expresion.calculate();
-
-            return resultado;
-        }
-
+        
         public Resultado MetodoBiseccion(Parametros parametros)
         {
             var Resultado = new Resultado();
 
-            double Fxi = CalcularXi(parametros);
-            double Fxd = CalcularXd(parametros);
+            var nombre = parametros.Funcion.Split('=')[0].Trim();
+            var funcion = new Function(parametros.Funcion);
+            var argumento1 = new Argument("x", parametros.Xi);
+            var argumento2 = new Argument("x", parametros.Xd);
+            var expresion1 = new Expression(nombre, funcion, argumento1);
+            var expresion2 = new Expression(nombre, funcion, argumento2);
+
+            double Fxi = expresion1.calculate();
+            double Fxd = expresion2.calculate();
             double R = Fxi * Fxd;
             Resultado.Iteraciones = 0;
             double xant = 0;
@@ -51,14 +37,10 @@ namespace AnalisisNumerico.Logica
                 }
                 else if (R < 0)
                 {
-                    Fxi = CalcularXi(parametros);
-                    Fxd = CalcularXd(parametros);
+                    Fxi = expresion1.calculate();
+                    Fxd = expresion2.calculate();
                     var xr = (parametros.Xi + parametros.Xd) / 2;
-                    var Fxr = CalcularXi(new Parametros
-                    {
-                        Funcion = parametros.Funcion,
-                        Xi = xr,
-                    });
+                    var Fxr = Calculo(parametros.Funcion, xr);
                     Resultado.Iteraciones++;
                     Resultado.Error = Math.Abs((xr - xant) / xr);
 
@@ -98,9 +80,18 @@ namespace AnalisisNumerico.Logica
 
         public Resultado MetodoReglaFalsa(Parametros parametros)
         {
-            double Fxi = CalcularXi(parametros);
-            double Fxd = CalcularXd(parametros);
             var Resultado = new Resultado();
+
+            var nombre = parametros.Funcion.Split('=')[0].Trim();
+            var funcion = new Function(parametros.Funcion);
+            var argumento1 = new Argument("x", parametros.Xi);
+            var argumento2 = new Argument("x", parametros.Xd);
+            var expresion1 = new Expression(nombre, funcion, argumento1);
+            var expresion2 = new Expression(nombre, funcion, argumento2);
+
+            double Fxi = expresion1.calculate();
+            double Fxd = expresion2.calculate();
+        
             double R = Fxi * Fxd;
             Resultado.Iteraciones = 0;
             double xant = 0;
@@ -114,14 +105,11 @@ namespace AnalisisNumerico.Logica
                 }
                 else if (R < 0) // El algoritmo de la regla falsa es igual al MetodoBiseccion solo cambia la formula de calcular xr
                 {
-                    Fxi = CalcularXi(parametros);
-                    Fxd = CalcularXd(parametros);
-                    var xr = ((Fxd * parametros.Xi - Fxi * parametros.Xd) / (Fxi-Fxd)); // <----
-                    var Fxr = CalcularXi(new Parametros
-                    {
-                        Funcion = parametros.Funcion,
-                        Xi = xr,
-                    });
+                    Fxi = expresion1.calculate();
+                    Fxd = expresion2.calculate();
+                    var xr = ((Fxd * parametros.Xi - Fxi * parametros.Xd) / (Fxi - Fxd));
+                    var Fxr = Calculo(parametros.Funcion, xr);
+
                     Resultado.Iteraciones++;
                     Resultado.Error = Math.Abs((xr - xant) / xr);
 
@@ -161,11 +149,18 @@ namespace AnalisisNumerico.Logica
 
         public Resultado MetodoTangente (Parametros parametros)
         {
-            double Fxi = CalcularXi(parametros);
+            var nombre = parametros.Funcion.Split('=')[0].Trim();
+            var funcion = new Function(parametros.Funcion);
+            var argumento1 = new Argument("x", parametros.Xi);
+            var expresion1 = new Expression(nombre, funcion, argumento1);
+
+            double Fxi = expresion1.calculate();
+
             var Resultado = new Resultado
             {
                 Iteraciones = 0
             };
+
             double xant = 0;
             double derFx = 0;
             bool bandera = false;
@@ -179,22 +174,18 @@ namespace AnalisisNumerico.Logica
                 }
                 else
                 {
-                    Fxi = CalcularXi(parametros);
-                    var Fxitole = CalcularXi(new Parametros
-                    {
-                        Funcion = parametros.Funcion,
-                        Xi = parametros.Xi + parametros.Tolerancia,
-                    });
+                    Fxi = expresion1.calculate();
+                    var xi = parametros.Xi + parametros.Tolerancia;
+                    var Fxitole = Calculo(parametros.Funcion, xi);
+
                     derFx = (Fxitole - Fxi) / parametros.Tolerancia;
 
                     double xr = parametros.Xi - (Fxi / derFx);
+
                     Resultado.Iteraciones++;
                     Resultado.Error = (xr - xant) / xr;
-                    var Fxr = CalcularXi(new Parametros
-                    {
-                        Funcion = parametros.Funcion,
-                        Xi = xr,
-                    });
+
+                    var Fxr = Calculo(parametros.Funcion, xr);
 
                     if ( Fxr < parametros.Tolerancia || Resultado.Iteraciones > parametros.Iteraciones || Resultado.Error < parametros.Tolerancia )
                     {
@@ -213,24 +204,27 @@ namespace AnalisisNumerico.Logica
 
         public Resultado MetodoSecante (Parametros parametros)
         {
-            var Fxi = CalcularXi(parametros);
-            var Fxd = CalcularXd(parametros);
+            var nombre = parametros.Funcion.Split('=')[0].Trim();
+            var funcion = new Function(parametros.Funcion);
+
+            var argumento1 = new Argument("x", parametros.Xi);
+            var argumento2 = new Argument("x", parametros.Xd);
+
+            var expresion1 = new Expression(nombre, funcion, argumento1);
+            var expresion2 = new Expression(nombre, funcion, argumento2);
+
+            double Fxi = expresion1.calculate();
+            double Fxd = expresion2.calculate();
+
             var Resultado = new Resultado();
             double xant = 0;
             double xr = 0;
             
             double CalcularSec (double x0, double x1)
             {
-                var Fx0 = CalcularXi(new Parametros
-                {
-                    Funcion = parametros.Funcion,
-                    Xi = x0,
-                });
-                var Fx1 = CalcularXi(new Parametros
-                {
-                    Funcion = parametros.Funcion,
-                    Xi = x1,
-                });
+                var Fx0 = Calculo(parametros.Funcion, x0);
+                var Fx1 = Calculo(parametros.Funcion, x1);
+
                 return ((Fx1 * x0 - Fx0 * x1)/ Fx1 - Fx0);
             }
 
@@ -256,8 +250,8 @@ namespace AnalisisNumerico.Logica
                     xr = CalcularSec(parametros.Xi, parametros.Xd);
                     Resultado.Error = Math.Abs((xr - xant) / xr);
 
-                    Fxi = CalcularXi(parametros);
-                    Fxd = CalcularXd(parametros);
+                    Fxi = expresion1.calculate();
+                    Fxd = expresion2.calculate();
 
                     if (Math.Abs(Fxd) < parametros.Tolerancia || Resultado.Error < parametros.Tolerancia || Resultado.Iteraciones >= parametros.Iteraciones )
                     {
