@@ -29,7 +29,7 @@ namespace AnalisisNumerico.UI
             var tole = double.Parse(ToleranciatextBox.Text);
             var Ite = int.Parse(IteracionestextBox.Text);
 
-            var resultado = metodosRaices.MetodoReglaFalsa(new Parametros
+            var resultado = metodosRaices.MetodosCerrados(new Parametros
             {
                 Funcion = funcion,
                 Xi = Xi,
@@ -48,7 +48,7 @@ namespace AnalisisNumerico.UI
             {
                 RaiztextBox.Text = resultado.Raiz.ToString();
                 ItetextBox.Text = resultado.Iteraciones.ToString();
-                ErrortextBox.Text = resultado.Error.ToString();
+                ErrortextBox.Text = resultado.Error.ToString("N8");
             }
         }
     }

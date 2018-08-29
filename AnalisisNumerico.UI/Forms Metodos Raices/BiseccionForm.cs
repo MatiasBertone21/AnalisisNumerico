@@ -29,14 +29,16 @@ namespace AnalisisNumerico.UI
             var tole = double.Parse(ToleranciatextBox.Text);
             var Ite = int.Parse(IteracionestextBox.Text);
 
-            var resultado = metodosRaices.MetodoBiseccion(new Parametros
+            var resultado = metodosRaices.MetodosCerrados(new Parametros
             {
                 Funcion = funcion,
                 Xi = Xi,
                 Xd = Xd,
                 Tolerancia = tole,
-                Iteraciones = Ite
+                Iteraciones = Ite,
+                Tipo = true
             });
+
             if (resultado.Raiz == 00)
             {
                 Errorlabel.Visible = true;
@@ -48,7 +50,7 @@ namespace AnalisisNumerico.UI
             {
                 RaiztextBox.Text = resultado.Raiz.ToString();
                 ItetextBox.Text = resultado.Iteraciones.ToString();
-                ErrortextBox.Text = resultado.Error.ToString();
+                ErrortextBox.Text = resultado.Error.ToString("N8");
             }
         }
     }

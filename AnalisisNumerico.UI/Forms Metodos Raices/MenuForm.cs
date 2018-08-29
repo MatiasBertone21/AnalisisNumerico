@@ -69,14 +69,9 @@ namespace AnalisisNumerico.UI
 
         //Implementaciones
 
-        Resultado IMetodosRaices.MetodoBiseccion(Parametros parametros)
+        Resultado IMetodosRaices.MetodosCerrados(Parametros parametros)
         {
-            return metodosRaices.MetodoBiseccion(parametros);
-        }
-
-        Resultado IMetodosRaices.MetodoReglaFalsa(Parametros parametros)
-        {
-            return metodosRaices.MetodoReglaFalsa(parametros);
+            return metodosRaices.MetodosCerrados(parametros);
         }
 
         Resultado IMetodosRaices.MetodoTangente(Parametros parametros)

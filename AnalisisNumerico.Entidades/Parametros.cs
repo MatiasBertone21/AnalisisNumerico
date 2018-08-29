@@ -11,5 +11,7 @@
         public int Iteraciones { get; set; }
 
         public double Tolerancia { get; set; }
+
+        public bool Tipo { get; set; }
     }
 }
