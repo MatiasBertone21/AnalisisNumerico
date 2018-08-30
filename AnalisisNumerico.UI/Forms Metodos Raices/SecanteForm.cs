@@ -37,6 +37,7 @@ namespace AnalisisNumerico.UI
                 Tolerancia = tole,
                 Iteraciones = Ite
             });
+
             if (resultado.Raiz == 00)
             {
                 Errorlabel.Visible = true;
@@ -46,6 +47,8 @@ namespace AnalisisNumerico.UI
             }
             else
             {
+                Errorlabel.Visible = true;
+                Errorlabel.Text = resultado.Mensaje;
                 RaiztextBox.Text = resultado.Raiz.ToString();
                 ItetextBox.Text = resultado.Iteraciones.ToString();
                 ErrortextBox.Text = resultado.Error.ToString();

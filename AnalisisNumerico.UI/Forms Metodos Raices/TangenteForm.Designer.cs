@@ -48,14 +48,14 @@
             // 
             // ErrortextBox
             // 
-            this.ErrortextBox.Location = new System.Drawing.Point(223, 186);
+            this.ErrortextBox.Location = new System.Drawing.Point(288, 216);
             this.ErrortextBox.Name = "ErrortextBox";
             this.ErrortextBox.Size = new System.Drawing.Size(100, 20);
             this.ErrortextBox.TabIndex = 36;
             // 
             // ItetextBox
             // 
-            this.ItetextBox.Location = new System.Drawing.Point(223, 154);
+            this.ItetextBox.Location = new System.Drawing.Point(288, 182);
             this.ItetextBox.Name = "ItetextBox";
             this.ItetextBox.Size = new System.Drawing.Size(100, 20);
             this.ItetextBox.TabIndex = 35;
@@ -63,16 +63,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(155, 189);
+            this.label8.Location = new System.Drawing.Point(197, 219);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 13);
+            this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 34;
-            this.label8.Text = "Error Relativo";
+            this.label8.Text = "Error Relativo:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(155, 161);
+            this.label7.Location = new System.Drawing.Point(197, 189);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 33;
@@ -81,7 +81,7 @@
             // Errorlabel
             // 
             this.Errorlabel.AutoSize = true;
-            this.Errorlabel.Location = new System.Drawing.Point(129, 99);
+            this.Errorlabel.Location = new System.Drawing.Point(12, 115);
             this.Errorlabel.Name = "Errorlabel";
             this.Errorlabel.Size = new System.Drawing.Size(142, 13);
             this.Errorlabel.TabIndex = 32;
@@ -90,7 +90,7 @@
             // 
             // RaiztextBox
             // 
-            this.RaiztextBox.Location = new System.Drawing.Point(223, 124);
+            this.RaiztextBox.Location = new System.Drawing.Point(288, 152);
             this.RaiztextBox.Name = "RaiztextBox";
             this.RaiztextBox.Size = new System.Drawing.Size(100, 20);
             this.RaiztextBox.TabIndex = 30;
@@ -98,7 +98,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(152, 129);
+            this.label6.Location = new System.Drawing.Point(197, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 29;
@@ -107,7 +107,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(285, 57);
+            this.label5.Location = new System.Drawing.Point(288, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 28;
@@ -115,7 +115,7 @@
             // 
             // IteracionestextBox
             // 
-            this.IteracionestextBox.Location = new System.Drawing.Point(288, 74);
+            this.IteracionestextBox.Location = new System.Drawing.Point(288, 73);
             this.IteracionestextBox.Name = "IteracionestextBox";
             this.IteracionestextBox.Size = new System.Drawing.Size(100, 20);
             this.IteracionestextBox.TabIndex = 27;
@@ -123,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 57);
+            this.label4.Location = new System.Drawing.Point(12, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 26;
@@ -131,7 +131,7 @@
             // 
             // ToleranciatextBox
             // 
-            this.ToleranciatextBox.Location = new System.Drawing.Point(9, 73);
+            this.ToleranciatextBox.Location = new System.Drawing.Point(12, 73);
             this.ToleranciatextBox.Name = "ToleranciatextBox";
             this.ToleranciatextBox.Size = new System.Drawing.Size(100, 20);
             this.ToleranciatextBox.TabIndex = 25;
@@ -147,7 +147,7 @@
             // 
             // CalcularButton
             // 
-            this.CalcularButton.Location = new System.Drawing.Point(71, 124);
+            this.CalcularButton.Location = new System.Drawing.Point(48, 179);
             this.CalcularButton.Name = "CalcularButton";
             this.CalcularButton.Size = new System.Drawing.Size(75, 23);
             this.CalcularButton.TabIndex = 22;
@@ -179,11 +179,11 @@
             this.PuntoInicioTextBox.Size = new System.Drawing.Size(100, 20);
             this.PuntoInicioTextBox.TabIndex = 37;
             // 
-            // FormulaFundamentalForm
+            // TangenteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 216);
+            this.ClientSize = new System.Drawing.Size(512, 254);
             this.Controls.Add(this.PuntoIniciodaLabel);
             this.Controls.Add(this.PuntoInicioTextBox);
             this.Controls.Add(this.ErrortextBox);
@@ -200,7 +200,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CalcularButton);
             this.Controls.Add(this.FuncionTextBox);
-            this.Name = "FormulaFundamentalForm";
+            this.Name = "TangenteForm";
             this.Text = "Newton-Raphson (Tangente)";
             this.ResumeLayout(false);
             this.PerformLayout();

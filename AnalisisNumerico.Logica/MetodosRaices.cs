@@ -4,18 +4,12 @@ using org.mariuszgromada.math.mxparser;
 using System;
 namespace AnalisisNumerico.Logica
 {
-    public class MetodosRaices: IMetodosRaices
+    public class MetodosRaices : IMetodosRaices
     {
 
         public double Calculo(string Funcion, Double valor)
         {
             return new Function(Funcion).calculate(valor);
-        }
-
-        public double Decimales(double valor, int decimales)
-        {
-            double aux_value = Math.Pow(10, decimales);
-            return (Math.Truncate(valor * aux_value) / aux_value);
         }
 
         public Resultado MetodosCerrados(Parametros parametros)
@@ -48,8 +42,8 @@ namespace AnalisisNumerico.Logica
                 else if (R < 0)
                 {
                     Fxi = expresion1.calculate();
-                    Fxd = expresion2.calculate();     
-                    
+                    Fxd = expresion2.calculate();
+
                     if (parametros.Tipo)
                     {
                         xr = (parametros.Xi + parametros.Xd) / 2;
@@ -94,22 +88,22 @@ namespace AnalisisNumerico.Logica
                 }
             }
             return Resultado;
-                
+
         }
 
-        public Resultado MetodoTangente (Parametros parametros)
+        public Resultado MetodoTangente(Parametros parametros)
         {
+            var Resultado = new Resultado
+            {
+                Iteraciones = 0
+            };
+
             var nombre = parametros.Funcion.Split('=')[0].Trim();
             var funcion = new Function(parametros.Funcion);
             var argumento1 = new Argument("x", parametros.Xi);
             var expresion1 = new Expression(nombre, funcion, argumento1);
 
             double Fxi = expresion1.calculate();
-
-            var Resultado = new Resultado
-            {
-                Iteraciones = 0
-            };
 
             double xant = 0;
             double derFx = 0;
@@ -125,22 +119,34 @@ namespace AnalisisNumerico.Logica
                 else
                 {
                     Fxi = expresion1.calculate();
+
                     var xi = parametros.Xi + parametros.Tolerancia;
                     var Fxitole = Calculo(parametros.Funcion, xi);
 
                     derFx = (Fxitole - Fxi) / parametros.Tolerancia;
 
+                    if (derFx == 0)
+                    {
+                        bandera = true;
+                        Resultado.Mensaje = "Pendiente cero. Se realiza una división por cero";
+                    }
+
                     double xr = parametros.Xi - (Fxi / derFx);
 
                     Resultado.Iteraciones++;
+
                     Resultado.Error = (xr - xant) / xr;
 
                     var Fxr = Calculo(parametros.Funcion, xr);
 
-                    if ( Fxr < parametros.Tolerancia || Resultado.Iteraciones > parametros.Iteraciones || Resultado.Error < parametros.Tolerancia )
+                    if (Fxr < parametros.Tolerancia || Resultado.Iteraciones > parametros.Iteraciones || Resultado.Error < parametros.Tolerancia)
                     {
                         Resultado.Raiz = xr;
                         bandera = true;
+                        if (Resultado.Iteraciones > parametros.Iteraciones)
+                        {
+                            Resultado.Mensaje = "Se supero la cantidad máxima de iteraciones. Encontro un punto de inflexion o cicla entre dos valores.";
+                        }
                     }
                     else
                     {
@@ -152,7 +158,7 @@ namespace AnalisisNumerico.Logica
             return Resultado;
         }
 
-        public Resultado MetodoSecante (Parametros parametros)
+        public Resultado MetodoSecante(Parametros parametros)
         {
             var nombre = parametros.Funcion.Split('=')[0].Trim();
             var funcion = new Function(parametros.Funcion);
@@ -169,13 +175,13 @@ namespace AnalisisNumerico.Logica
             var Resultado = new Resultado();
             double xant = 0;
             double xr = 0;
-            
-            double CalcularSec (double x0, double x1)
+
+            double CalcularSec(double x0, double x1)
             {
                 var Fx0 = Calculo(parametros.Funcion, x0);
                 var Fx1 = Calculo(parametros.Funcion, x1);
 
-                return ((Fx1 * x0 - Fx0 * x1)/ Fx1 - Fx0);
+                return ((Fx1 * x0 - Fx0 * x1) / Fx1 - Fx0);
             }
 
             bool bandera = false;
@@ -198,12 +204,21 @@ namespace AnalisisNumerico.Logica
                 {
                     Resultado.Iteraciones++;
                     xr = CalcularSec(parametros.Xi, parametros.Xd);
+
+                    var calculo = Calculo(parametros.Funcion, xr);
+                    string calculo2 = calculo.ToString();
+                    if (calculo2 == "NaN")
+                    {
+                        Resultado.Mensaje = "f(x) es de la familia del logaritmo. La función evaluada en x2 no existe";
+                        bandera = true;
+                    }
+
                     Resultado.Error = Math.Abs((xr - xant) / xr);
 
                     Fxi = expresion1.calculate();
                     Fxd = expresion2.calculate();
 
-                    if (Math.Abs(Fxd) < parametros.Tolerancia || Resultado.Error < parametros.Tolerancia || Resultado.Iteraciones >= parametros.Iteraciones )
+                    if (Math.Abs(Fxd) < parametros.Tolerancia || Resultado.Error < parametros.Tolerancia || Resultado.Iteraciones >= parametros.Iteraciones)
                     {
                         Resultado.Raiz = xr;
                         bandera = true;

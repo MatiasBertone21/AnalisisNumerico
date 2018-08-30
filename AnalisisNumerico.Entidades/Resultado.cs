@@ -7,5 +7,7 @@
         public double Iteraciones { get; set; }
 
         public double Error { get; set; }
+
+        public string Mensaje { get; set; }
     }
 }

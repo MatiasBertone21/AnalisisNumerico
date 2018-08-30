@@ -26,12 +26,14 @@ namespace AnalisisNumerico.UI
             var funcion = FuncionTextBox.Text;
             var tole = double.Parse(ToleranciatextBox.Text);
             var Ite = int.Parse(IteracionestextBox.Text);
+            var xo = double.Parse(PuntoInicioTextBox.Text);
 
             var resultado = metodosRaices.MetodoTangente(new Parametros
             {
                 Funcion = funcion,
                 Tolerancia = tole,
-                Iteraciones = Ite
+                Iteraciones = Ite,
+                Xi = xo
             });
 
             if (resultado.Raiz == 00)
@@ -43,6 +45,8 @@ namespace AnalisisNumerico.UI
             }
             else
             {
+                Errorlabel.Visible = true;
+                Errorlabel.Text = resultado.Mensaje;
                 RaiztextBox.Text = resultado.Raiz.ToString();
                 ItetextBox.Text = resultado.Iteraciones.ToString();
                 ErrortextBox.Text = resultado.Error.ToString();
