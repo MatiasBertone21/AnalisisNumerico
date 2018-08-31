@@ -35,7 +35,8 @@ namespace AnalisisNumerico.UI
                 Xi = Xi,
                 Xd = Xd,
                 Tolerancia = tole,
-                Iteraciones = Ite
+                Iteraciones = Ite,
+                Tipo = false
             });
             if (resultado.Raiz == 00)
             {
