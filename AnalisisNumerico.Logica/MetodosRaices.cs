@@ -135,10 +135,11 @@ namespace AnalisisNumerico.Logica
 
                     derFx = (Fxitole - Fxi) / parametros.Tolerancia;
 
-                    if (derFx == 0)
+                    if (derFx < parametros.Tolerancia || derFx > -parametros.Tolerancia)
                     {
                         bandera = true;
-                        Resultado.Mensaje = "Pendiente cero";
+                        Resultado.Mensaje = "Pendiente cero.";
+                        break;
                     }
 
                     double xr = parametros.Xi - (Fxi / derFx);

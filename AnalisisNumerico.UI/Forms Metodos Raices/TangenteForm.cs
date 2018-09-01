@@ -36,7 +36,7 @@ namespace AnalisisNumerico.UI
                 Xi = xo
             });
 
-            if (resultado.Raiz == 00)
+            if (resultado.Raiz == 00 && resultado.Mensaje == "")
             {
                 Errorlabel.Visible = true;
                 RaiztextBox.Text = "X";
