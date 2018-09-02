@@ -128,7 +128,7 @@ namespace AnalisisNumerico.Logica
                 }
                 else
                 {
-                    Fxi = expresion1.calculate();
+                    Fxi = CalculoFuncion(parametros.Funcion, parametros.Xi);
 
                     var xi = parametros.Xi + parametros.Tolerancia;
                     var Fxitole = CalculoFuncion(parametros.Funcion, xi);
@@ -198,7 +198,7 @@ namespace AnalisisNumerico.Logica
             double Fxd = expresion2.calculate();
 
             var Resultado = new Resultado();
-            double xant = 0;
+            double xant = parametros.Xi; //de otro modo en la primera iteracion el error siempre seria 1
             double xr = 0;
 
             double CalcularSec(double x0, double x1)
@@ -206,7 +206,7 @@ namespace AnalisisNumerico.Logica
                 var Fx0 = CalculoFuncion(parametros.Funcion, x0);
                 var Fx1 = CalculoFuncion(parametros.Funcion, x1);
 
-                return ((Fx1 * x0 - Fx0 * x1) / Fx1 - Fx0);
+                return ((Fx1 * x0 - Fx0 * x1) / (Fx1 - Fx0));
             }
 
             bool bandera = false;
@@ -236,7 +236,7 @@ namespace AnalisisNumerico.Logica
                     Resultado.Iteraciones++;
                     xr = CalcularSec(parametros.Xi, parametros.Xd);
 
-                    var calculo = CalculoFuncion(parametros.Funcion, xr);
+                    var calculo = Math.Abs(CalculoFuncion(parametros.Funcion, xr));
                     string calculo2 = calculo.ToString();
 
                     if (calculo2 == "NaN")
@@ -247,10 +247,7 @@ namespace AnalisisNumerico.Logica
 
                     Resultado.Error = Math.Abs((xr - xant) / xr);
 
-                    Fxi = expresion1.calculate();
-                    Fxd = expresion2.calculate();
-
-                    if (Math.Abs(Fxd) < parametros.Tolerancia || Resultado.Error < parametros.Tolerancia || Resultado.Iteraciones >= parametros.Iteraciones)
+                    if (Math.Abs(Fxd) < parametros.Tolerancia || Resultado.Iteraciones >= parametros.Iteraciones || Resultado.Error < parametros.Tolerancia)
                     {
                         Resultado.Raiz = xr;
                         bandera = true;
@@ -260,6 +257,9 @@ namespace AnalisisNumerico.Logica
                         parametros.Xi = parametros.Xd;
                         parametros.Xd = xr;
                         xant = parametros.Xd;
+
+                        Fxi = CalculoFuncion(parametros.Funcion, parametros.Xi);
+                        Fxd = CalculoFuncion(parametros.Funcion, parametros.Xd);
                     }
                 }
             }
