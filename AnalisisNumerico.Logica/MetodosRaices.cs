@@ -135,7 +135,7 @@ namespace AnalisisNumerico.Logica
 
                     derFx = (Fxitole - Fxi) / parametros.Tolerancia;
 
-                    if (derFx < parametros.Tolerancia || derFx > -parametros.Tolerancia)
+                    if (derFx < 0.001 && derFx > -0.001)
                     {
                         bandera = true;
                         Resultado.Mensaje = "Pendiente cero.";
@@ -153,7 +153,7 @@ namespace AnalisisNumerico.Logica
 
                     Resultado.Iteraciones++;
 
-                    Resultado.Error = (xr - xant) / xr;
+                    Resultado.Error = Math.Abs((xr - xant) / xr);
 
                     var Fxr = CalculoFuncion(parametros.Funcion, xr);
 
