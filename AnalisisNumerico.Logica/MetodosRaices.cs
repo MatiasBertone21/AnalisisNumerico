@@ -157,7 +157,7 @@ namespace AnalisisNumerico.Logica
 
                     var Fxr = CalculoFuncion(parametros.Funcion, xr);
 
-                    if (Fxr < parametros.Tolerancia || Resultado.Iteraciones > parametros.Iteraciones || Resultado.Error < parametros.Tolerancia)
+                    if (Math.Abs(Fxr) < parametros.Tolerancia || Resultado.Iteraciones > parametros.Iteraciones || Resultado.Error < parametros.Tolerancia)
                     {
                         Resultado.Raiz = xr;
                         bandera = true;

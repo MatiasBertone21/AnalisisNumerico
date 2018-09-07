@@ -197,7 +197,7 @@
             this.ErrortextBox.Size = new System.Drawing.Size(100, 20);
             this.ErrortextBox.TabIndex = 18;
             // 
-            // InicioForm
+            // BiseccionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -220,8 +220,9 @@
             this.Controls.Add(this.XiTextBox);
             this.Controls.Add(this.CalcularButton);
             this.Controls.Add(this.FuncionTextBox);
-            this.Name = "InicioForm";
+            this.Name = "BiseccionForm";
             this.Text = "Biseccion";
+            this.Load += new System.EventHandler(this.BiseccionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

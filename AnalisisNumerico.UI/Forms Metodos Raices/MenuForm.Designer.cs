@@ -104,7 +104,7 @@
             this.secanteToolStripMenuItem.Name = "secanteToolStripMenuItem";
             this.secanteToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.secanteToolStripMenuItem.Text = "Secante";
-            this.secanteToolStripMenuItem.Click += new System.EventHandler(this.secanteToolStripMenuItem_Click);
+            this.secanteToolStripMenuItem.Click += new System.EventHandler(this.SecanteToolStripMenuItem_Click);
             // 
             // MenuForm
             // 

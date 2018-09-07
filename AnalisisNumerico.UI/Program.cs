@@ -8,7 +8,7 @@ namespace AnalisisNumerico.UI
 {
     static class Program
     {
-        private static Container container;
+        internal static Container container;
 
         /// <summary>
         /// The main entry point for the application.
@@ -26,7 +26,6 @@ namespace AnalisisNumerico.UI
         {
             container = new Container();
             container.Register<IMetodosRaices, MetodosRaices>();
-            container.Register<MenuForm>();
         }
     }
 }

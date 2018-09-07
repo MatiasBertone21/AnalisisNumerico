@@ -13,75 +13,39 @@ using SimpleInjector;
 
 namespace AnalisisNumerico.UI
 {
-    public partial class MenuForm : Form, IMetodosRaices
+    public partial class MenuForm : Form
     {
-        private readonly IMetodosRaices metodosRaices;
-     
-        public MenuForm(IMetodosRaices metodosRaices)
+        public MenuForm()
         {
-            this.metodosRaices = metodosRaices;
             InitializeComponent();
         }
 
         private void BiseccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (BiseccionForm biseccionForm = new BiseccionForm(metodosRaices)
-            {
-                Owner = this
-            })
-            {
-                biseccionForm.ShowDialog();
-            }
+            var FormBiseccion = Program.container.GetInstance<BiseccionForm>();
+            FormBiseccion.Owner = this;
+            FormBiseccion.Show();
         }
 
         private void ReglaFalsaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (ReglaFalsaForm reglaFalsaForm = new ReglaFalsaForm(metodosRaices)
-            {
-                Owner = this
-            })
-            {
-                reglaFalsaForm.ShowDialog();
-            }
+            var FormReglaFalsa = Program.container.GetInstance<ReglaFalsaForm>();
+            FormReglaFalsa.Owner = this;
+            FormReglaFalsa.Show();
         }
 
         private void NewtonRaphsonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (TangenteForm tangenteForm = new TangenteForm(metodosRaices)
-            {
-                Owner = this
-            })
-            {
-                tangenteForm.ShowDialog();
-            }
+            var FormTangente = Program.container.GetInstance<TangenteForm>();
+            FormTangente.Owner = this;
+            FormTangente.Show();
         }
 
-        private void secanteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SecanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (SecanteForm secanteForm = new SecanteForm(metodosRaices)
-            {
-                Owner = this
-            })
-            {
-                secanteForm.ShowDialog();
-            }
-        }
-
-        //Implementaciones
-
-        Resultado IMetodosRaices.MetodosCerrados(Parametros parametros)
-        {
-            return metodosRaices.MetodosCerrados(parametros);
-        }
-
-        Resultado IMetodosRaices.MetodoTangente(Parametros parametros)
-        {
-            return metodosRaices.MetodoTangente(parametros);
-        }
-
-        Resultado IMetodosRaices.MetodoSecante(Parametros parametros)
-        {
-            return metodosRaices.MetodoSecante(parametros);
+            var FormSecante = Program.container.GetInstance<SecanteForm>();
+            FormSecante.Owner = this;
+            FormSecante.Show();
         }
     }
 }

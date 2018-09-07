@@ -53,5 +53,10 @@ namespace AnalisisNumerico.UI
                 ErrortextBox.Text = resultado.Error.ToString("N8");
             }
         }
+
+        private void BiseccionForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
