@@ -29,7 +29,7 @@ namespace AnalisisNumerico.UI
             var tole = double.Parse(ToleranciatextBox.Text);
             var Ite = int.Parse(IteracionestextBox.Text);
 
-            var resultado = metodosRaices.MetodoSecante(new Parametros
+            var resultado = metodosRaices.MetodoSecante(new ParametrosRaices
             {
                 Funcion = funcion,
                 Xi = Xi,

@@ -28,7 +28,7 @@ namespace AnalisisNumerico.UI
             var Ite = int.Parse(IteracionestextBox.Text);
             var xo = double.Parse(PuntoInicioTextBox.Text);
 
-            var resultado = metodosRaices.MetodoTangente(new Parametros
+            var resultado = metodosRaices.MetodoTangente(new ParametrosRaices
             {
                 Funcion = funcion,
                 Tolerancia = tole,

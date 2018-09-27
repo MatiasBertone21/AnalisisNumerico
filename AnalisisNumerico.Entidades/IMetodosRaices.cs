@@ -2,12 +2,10 @@
 {
     public interface IMetodosRaices
     {
-        Resultado MetodosCerrados(Parametros parametros);
+        ResultadoRaices MetodosCerrados(ParametrosRaices parametros);
 
-        Resultado MetodoTangente(Parametros parametros);
+        ResultadoRaices MetodoTangente(ParametrosRaices parametros);
 
-        Resultado MetodoSecante(Parametros parametros);
+        ResultadoRaices MetodoSecante(ParametrosRaices parametros);
     }
-
-
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AnalisisNumerico.Entidades;
 using AnalisisNumerico.Logica;
+using AnalisisNumerico.UI.Forms_Sistemas_Ecuaciones;
 using SimpleInjector;
 
 namespace AnalisisNumerico.UI
@@ -46,6 +47,20 @@ namespace AnalisisNumerico.UI
             var FormSecante = Program.container.GetInstance<SecanteForm>();
             FormSecante.Owner = this;
             FormSecante.Show();
+        }
+
+        private void GaussJordanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var FormGaussJordan = Program.container.GetInstance<GaussJordanForm>();
+            FormGaussJordan.Owner = this;
+            FormGaussJordan.Show();
+        }
+
+        private void GaussSeidelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var FormGaussSeidel = Program.container.GetInstance<GaussSeidelForm>();
+            FormGaussSeidel.Owner = this;
+            FormGaussSeidel.Show();
         }
     }
 }

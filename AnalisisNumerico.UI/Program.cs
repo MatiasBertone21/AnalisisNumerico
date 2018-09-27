@@ -26,6 +26,7 @@ namespace AnalisisNumerico.UI
         {
             container = new Container();
             container.Register<IMetodosRaices, MetodosRaices>();
+            container.Register<IMetodosEcuaciones, MetodosEcuaciones>();
         }
     }
 }

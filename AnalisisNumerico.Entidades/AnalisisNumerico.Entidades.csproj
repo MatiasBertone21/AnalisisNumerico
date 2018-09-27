@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMetodosEcuaciones.cs" />
     <Compile Include="IMetodosRaices.cs" />
     <Compile Include="Parametros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

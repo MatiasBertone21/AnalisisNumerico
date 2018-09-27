@@ -36,6 +36,9 @@
             this.metodosAbiertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newtonRaphsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.secanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sistemaDeEcuacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussJordanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussSeidelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,10 +47,11 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.raicesToolStripMenuItem});
+            this.raicesToolStripMenuItem,
+            this.sistemaDeEcuacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(123, 362);
+            this.menuStrip1.Size = new System.Drawing.Size(141, 224);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -57,7 +61,7 @@
             this.metodosCerradosToolStripMenuItem,
             this.metodosAbiertosToolStripMenuItem});
             this.raicesToolStripMenuItem.Name = "raicesToolStripMenuItem";
-            this.raicesToolStripMenuItem.Size = new System.Drawing.Size(116, 19);
+            this.raicesToolStripMenuItem.Size = new System.Drawing.Size(134, 19);
             this.raicesToolStripMenuItem.Text = "Raices";
             // 
             // metodosCerradosToolStripMenuItem
@@ -66,7 +70,7 @@
             this.biseccionToolStripMenuItem,
             this.reglaFalsaToolStripMenuItem});
             this.metodosCerradosToolStripMenuItem.Name = "metodosCerradosToolStripMenuItem";
-            this.metodosCerradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metodosCerradosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.metodosCerradosToolStripMenuItem.Text = "Metodos Cerrados";
             // 
             // biseccionToolStripMenuItem
@@ -89,7 +93,7 @@
             this.newtonRaphsonToolStripMenuItem,
             this.secanteToolStripMenuItem});
             this.metodosAbiertosToolStripMenuItem.Name = "metodosAbiertosToolStripMenuItem";
-            this.metodosAbiertosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metodosAbiertosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.metodosAbiertosToolStripMenuItem.Text = "Metodos Abiertos";
             // 
             // newtonRaphsonToolStripMenuItem
@@ -106,11 +110,34 @@
             this.secanteToolStripMenuItem.Text = "Secante";
             this.secanteToolStripMenuItem.Click += new System.EventHandler(this.SecanteToolStripMenuItem_Click);
             // 
+            // sistemaDeEcuacionesToolStripMenuItem
+            // 
+            this.sistemaDeEcuacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gaussJordanToolStripMenuItem,
+            this.gaussSeidelToolStripMenuItem});
+            this.sistemaDeEcuacionesToolStripMenuItem.Name = "sistemaDeEcuacionesToolStripMenuItem";
+            this.sistemaDeEcuacionesToolStripMenuItem.Size = new System.Drawing.Size(134, 19);
+            this.sistemaDeEcuacionesToolStripMenuItem.Text = "Sistema de Ecuaciones";
+            // 
+            // gaussJordanToolStripMenuItem
+            // 
+            this.gaussJordanToolStripMenuItem.Name = "gaussJordanToolStripMenuItem";
+            this.gaussJordanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gaussJordanToolStripMenuItem.Text = "Gauss-Jordan";
+            this.gaussJordanToolStripMenuItem.Click += new System.EventHandler(this.GaussJordanToolStripMenuItem_Click);
+            // 
+            // gaussSeidelToolStripMenuItem
+            // 
+            this.gaussSeidelToolStripMenuItem.Name = "gaussSeidelToolStripMenuItem";
+            this.gaussSeidelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gaussSeidelToolStripMenuItem.Text = "Gauss-Seidel";
+            this.gaussSeidelToolStripMenuItem.Click += new System.EventHandler(this.GaussSeidelToolStripMenuItem_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 362);
+            this.ClientSize = new System.Drawing.Size(241, 224);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuForm";
@@ -131,5 +158,8 @@
         private System.Windows.Forms.ToolStripMenuItem metodosAbiertosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newtonRaphsonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem secanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sistemaDeEcuacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussJordanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussSeidelToolStripMenuItem;
     }
 }

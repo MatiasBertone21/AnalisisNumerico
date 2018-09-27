@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.Entidades
 {
-    public class Parametros
+    public class ParametrosRaices
     {
         public string Funcion { get; set; }
 

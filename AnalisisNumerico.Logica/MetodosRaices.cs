@@ -1,22 +1,21 @@
-﻿
-using AnalisisNumerico.Entidades;
+﻿using AnalisisNumerico.Entidades;
 using org.mariuszgromada.math.mxparser;
 using System;
+
 namespace AnalisisNumerico.Logica
 {
     public class MetodosRaices : IMetodosRaices
     {
-
         public double CalculoFuncion(string Funcion, Double valor)
         {
             return new Function(Funcion).calculate(valor);
         }
 
-        public Resultado MetodosCerrados(Parametros parametros)
+        public ResultadoRaices MetodosCerrados(ParametrosRaices parametros)
         {
             double xr = 0;
 
-            var Resultado = new Resultado
+            var Resultado = new ResultadoRaices
             {
                 Iteraciones = 0
             };
@@ -97,11 +96,11 @@ namespace AnalisisNumerico.Logica
             return Resultado;
         }
 
-        public Resultado MetodoTangente(Parametros parametros)
+        public ResultadoRaices MetodoTangente(ParametrosRaices parametros)
         {
             bool ban = false;
 
-            var Resultado = new Resultado
+            var Resultado = new ResultadoRaices
             {
                 Iteraciones = 0
             };
@@ -183,7 +182,7 @@ namespace AnalisisNumerico.Logica
             return Resultado;
         }
 
-        public Resultado MetodoSecante(Parametros parametros)
+        public ResultadoRaices MetodoSecante(ParametrosRaices parametros)
         {
             var nombre = parametros.Funcion.Split('=')[0].Trim();
             var funcion = new Function(parametros.Funcion);
@@ -197,7 +196,7 @@ namespace AnalisisNumerico.Logica
             double Fxi = expresion1.calculate();
             double Fxd = expresion2.calculate();
 
-            var Resultado = new Resultado();
+            var Resultado = new ResultadoRaices();
             double xant = parametros.Xi; //de otro modo en la primera iteracion el error siempre seria 1
             double xr = 0;
 

@@ -60,10 +60,22 @@
     <Compile Include="Forms Metodos Raices\BiseccionForm.Designer.cs">
       <DependentUpon>BiseccionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Metodos Raices\MenuForm.cs">
+    <Compile Include="Forms Sistemas Ecuaciones\GaussJordanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Metodos Raices\MenuForm.Designer.cs">
+    <Compile Include="Forms Sistemas Ecuaciones\GaussJordanForm.Designer.cs">
+      <DependentUpon>GaussJordanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Sistemas Ecuaciones\GaussSeidelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Sistemas Ecuaciones\GaussSeidelForm.Designer.cs">
+      <DependentUpon>GaussSeidelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -86,7 +98,13 @@
     <EmbeddedResource Include="Forms Metodos Raices\BiseccionForm.resx">
       <DependentUpon>BiseccionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Metodos Raices\MenuForm.resx">
+    <EmbeddedResource Include="Forms Sistemas Ecuaciones\GaussJordanForm.resx">
+      <DependentUpon>GaussJordanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Sistemas Ecuaciones\GaussSeidelForm.resx">
+      <DependentUpon>GaussSeidelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Metodos Raices\SecanteForm.resx">
@@ -128,5 +146,6 @@
       <Name>AnalisisNumerico.Logica</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
