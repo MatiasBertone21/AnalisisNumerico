@@ -36,23 +36,26 @@ namespace AnalisisNumerico.Logica
                     }
                     if (i > j)
                     {
-                        double valor = -matriz[i, j];
-                        for (int w = 0; w < cantidad + 1; w++)
+                        if (matriz[i,j] != 0)
                         {
-                            if (matriz[(cantidad - 1) - w, j] == 1)
+                            double valor = -matriz[i, j];
+                            for (int w = 0; w < cantidad + 1; w++)
                             {
-                                for (int c = 0; c < cantidad + 1; c++)
+                                if (matriz[(cantidad - 1) - w, j] == 1)
                                 {
-                                    vector[c] = matriz[(cantidad - 1) - w, c];
-                                    vector[c] = vector[c] * valor;
+                                    for (int c = 0; c < cantidad + 1; c++)
+                                    {
+                                        vector[c] = matriz[(cantidad - 1) - w, c];
+                                        vector[c] = vector[c] * valor;
+                                    }
+                                    break;
                                 }
-                                break;
                             }
-                        }
-                        for (int c = 0; c < cantidad + 1; c++)
-                        {
-                            matriz[i, c] = matriz[i, c] + vector[c];
-                        }
+                            for (int c = 0; c < cantidad + 1; c++)
+                            {
+                                matriz[i, c] = matriz[i, c] + vector[c];
+                            }
+                        }                       
                     }
                 }
             }
@@ -64,7 +67,7 @@ namespace AnalisisNumerico.Logica
                     if (i < j)
                     {
                         double valor = -matriz[i, j];
-                        for (int w = 0; w < cantidad + 1; w++)
+                        for (int w = 0; w <= cantidad; w++)
                         {
                             if (matriz[(cantidad - 1) - w, j] == 1)
                             {
@@ -91,7 +94,7 @@ namespace AnalisisNumerico.Logica
         {
             bool ban = true;
             int Ite = 0;
-            double Error = 0.0001;
+            double Error = 0.1;
 
             double[,] matriznegada = new double[cantidad, cantidad + 1];
             double[,] coeficientes = new double[cantidad, cantidad];
@@ -132,7 +135,7 @@ namespace AnalisisNumerico.Logica
                 Ite++;
                 int cont = 0;
                 for (int i = 0; i < cantidad; i++)
-                {                    
+                {
                     if (Math.Abs((Resultado[i, 0]) - ResultadoAnterior[i, 0]) < Error)
                     {
                         cont++;

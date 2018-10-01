@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using AnalisisNumerico.Entidades;
 using AnalisisNumerico.Logica;
+using System;
+using System.Windows.Forms;
 
 namespace AnalisisNumerico.UI.Forms_Sistemas_Ecuaciones
 {
     public partial class GaussJordanForm : Form
     {
-        public GaussJordanForm()
+        private readonly IMetodosEcuaciones metodosEcuaciones;
+
+        public GaussJordanForm(IMetodosEcuaciones Ecuaciones)
         {
+            this.metodosEcuaciones = Ecuaciones;
+
             InitializeComponent();
         }
 
@@ -47,8 +45,7 @@ namespace AnalisisNumerico.UI.Forms_Sistemas_Ecuaciones
                 }
             }
 
-            MetodosEcuaciones Nuevo = new MetodosEcuaciones();
-            matriz = Nuevo.MetodoGaussJordan(matriz, int.Parse(IncognitasTextBox.Text));
+            matriz = metodosEcuaciones.MetodoGaussJordan(matriz, int.Parse(IncognitasTextBox.Text));
 
             ResultadoMatriz.RowCount = int.Parse(IncognitasTextBox.Text);
             ResultadoMatriz.ColumnCount = int.Parse(IncognitasTextBox.Text) + 1;

@@ -7,8 +7,11 @@ namespace AnalisisNumerico.UI.Forms_Sistemas_Ecuaciones
 {
     public partial class GaussSeidelForm : Form
     {
-        public GaussSeidelForm()
+        private readonly IMetodosEcuaciones metodosEcuaciones;
+
+        public GaussSeidelForm(IMetodosEcuaciones Ecuaciones)
         {
+            this.metodosEcuaciones = Ecuaciones;
             InitializeComponent();
         }
 
@@ -40,9 +43,8 @@ namespace AnalisisNumerico.UI.Forms_Sistemas_Ecuaciones
                 }
             }
 
-            MetodosEcuaciones Nuevo = new MetodosEcuaciones();
-            string Mensaje = Nuevo.MetodoGaussSeidel(matriz, int.Parse(IncognitasTextBox.Text)).Item2.ToString();
-            matriz = Nuevo.MetodoGaussSeidel(matriz, int.Parse(IncognitasTextBox.Text)).Item1;
+            string Mensaje = metodosEcuaciones.MetodoGaussSeidel(matriz, int.Parse(IncognitasTextBox.Text)).Item2.ToString();
+            matriz = metodosEcuaciones.MetodoGaussSeidel(matriz, int.Parse(IncognitasTextBox.Text)).Item1;
 
             ResultadoMatriz.RowCount = int.Parse(IncognitasTextBox.Text);
             ResultadoMatriz.ColumnCount = 1;
